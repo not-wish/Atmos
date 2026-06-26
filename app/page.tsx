@@ -9,14 +9,18 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center">
-      <Header/>
-      <HeroSection/>
-      <FeatureShowcase/>
-      <section id="pricing" className="">
-        <PricingMatrix/>
+      <Header />
+      <HeroSection />
+      <section id="features" className="flex items-center justify-center w-full">
+        <FeatureShowcase />
       </section>
-      <SocialProof/>
-      <Footer/>
+      <section id="pricing" className="flex items-center justify-center w-full">
+        <PricingMatrix />
+      </section>
+      <section id="social-proof" className="flex items-center justify-center w-full">
+        <SocialProof />
+      </section>
+      <Footer />
     </main>
   );
 }
