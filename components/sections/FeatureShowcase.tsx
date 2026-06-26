@@ -1,6 +1,4 @@
-"use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import FeatureCard from "@/components/ui/FeatureCard";
 
 const featuresData = [
   {
@@ -26,48 +24,28 @@ const featuresData = [
 ];
 
 export default function FeatureShowcase() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-9/10 gap-12">
-      <div className="flex flex-col gap-2 items-center">
-        <h2 className="text-4xl font-bold font-jetbrains-mono">
+    <section
+      id="features"
+      className="flex flex-col items-center justify-center min-h-screen w-[90%] max-w-6xl mx-auto gap-12 py-20">
+      <div className="flex flex-col gap-2 items-center text-center">
+        <h2 className="text-4xl font-bold font-jetbrains-mono text-artic">
           Platform Capabilities
         </h2>
         <p className="">Everything you need to scale your enterprise.</p>
       </div>
 
+      {/* Desktop: Grid (Bento) | Mobile: Flex Column (Accordion) */}
       <div className="flex flex-col w-full md:grid md:grid-cols-3 gap-4">
         {featuresData.map((feature, index) => (
-          <div
+          <FeatureCard
             key={feature.id}
-            onMouseEnter={() => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(null)}
-            className={`
-              flex flex-col p-6 border rounded-xl transition-colors duration-200 ease-out cursor-pointer text-noctural
-              ${activeIndex === index ? "bg-linear-to-br to-forsythia from-safron" : "bg-linear-to-br from-forsythia to-safron"}
-              ${index === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-1"} 
-            `}>
-            <div className="flex justify-between">
-              <h3 className="font-bold">{feature.title}</h3>
-              <div className="relative h-6 w-6 md:hidden">
-                <Image
-                  src="/SVGs/chevron-down.svg"
-                  alt="Accordion Icon"
-                  fill
-                  className={`object-contain transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-180 md:rotate-0" : ""
-                  }`}
-                />
-              </div>
-            </div>
-            <p
-              className={` ${activeIndex === index ? "block" : "hidden md:block"}`}>
-              {feature.desc}
-            </p>
-          </div>
+            index={index}
+            title={feature.title}
+            desc={feature.desc}
+          />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
