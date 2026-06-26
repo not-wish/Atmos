@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --background: #172b36;
+  --foreground: #d9e8e2;
+  --artic-powder: #f1f6f4;
+  --nocturnal-expedition: #114c5a;
+  --forsythia: #ffc801;
+  --deep-safron: #ff9932;
+  --font-inter: "Inter", sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-artic: var(--artic-powder);
+  --color-noctural: var(--nocturnal-expedition);
+  --color-forsythia: var(--forsythia);
+  --color-safron: var(--deep-safron);
+  --font-inter: var(--font-inter);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #172b36;
+    --foreground: #d9e8e2;
+    --artic-powder: #f1f6f4;
+    --nocturnal-expedition: #114c5a;
+    --forsythia: #ffc801;
+    --deep-safron: #ff9932;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+}
