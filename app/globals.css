@@ -40,3 +40,7 @@ body {
   color: var(--foreground);
   font-family: "Inter", sans-serif;
 }
+
+h1 {
+  @apply text-8xl font-jetbrains-mono font-bold;
+}

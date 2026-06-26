@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Atmos",
   description: "A premium, high-converting, responsive landing page for an advanced AI-driven data automation platform",
+  
 };
 
 export default function RootLayout({
